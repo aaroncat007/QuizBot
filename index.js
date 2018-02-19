@@ -1,4 +1,4 @@
-var linebot = require('linebot');
+const linebot = require('linebot');
 const express = require('express');
 
 
@@ -7,6 +7,7 @@ const bot = linebot({
     channelId: process.env.CHANNEL_ID,
     channelSecret: process.env.CHANNEL_ACCESS_TOKEN,
     channelAccessToken: process.env.CHANNEL_SECRET,
+    verify: false
 });
 
 console.log(bot);
