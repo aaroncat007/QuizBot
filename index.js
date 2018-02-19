@@ -1,16 +1,13 @@
 const linebot = require('linebot');
 const express = require('express');
 
-
 // create LINE SDK config from env variables
 const bot = linebot({
     channelId: process.env.CHANNEL_ID,
-    channelSecret: process.env.CHANNEL_ACCESS_TOKEN,
-    channelAccessToken: process.env.CHANNEL_SECRET,
-    verify: false
+    channelSecret: process.env.CHANNEL_SECRET,
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 });
 
-console.log(bot);
 
 // create Express app
 const app = express();
@@ -19,7 +16,6 @@ const linebotParser = bot.parser();
 app.post('/callback', linebotParser);
 
 bot.on('message', function(event) {
-    console.log('message...');
     event.reply(event.message.text).then(function(data) {
         // success
         console.log('Success', data);
@@ -31,6 +27,7 @@ bot.on('message', function(event) {
 
 
 // listen on port
-app.listen(process.env.PORT || 3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log('LineBot is listening on ${port}');
 });
