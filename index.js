@@ -18,6 +18,7 @@ const linebotParser = bot.parser();
 app.post('/callback', linebotParser);
 
 bot.on('message', function(event) {
+    console.log('message...');
     event.reply(event.message.text).then(function(data) {
         // success
         console.log('Success', data);
