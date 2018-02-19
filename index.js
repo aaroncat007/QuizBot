@@ -9,6 +9,8 @@ const bot = linebot({
     channelAccessToken: process.env.CHANNEL_SECRET,
 });
 
+console.log(bot);
+
 // create Express app
 const app = express();
 const linebotParser = bot.parser();
