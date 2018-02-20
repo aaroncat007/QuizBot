@@ -1,5 +1,7 @@
 'use strict';
 import MyFireBase from './firebase.js';
+import Game from './game.js';
+
 const prefix = '--';
 const _firebase = new MyFireBase();
 
@@ -8,20 +10,24 @@ let eventHandler = event => {
         return;
     }
 
-    console.log('eventHandle:');
-    console.log(event);
+    let userid = event.source.userId;
+    const _game = new Game(userid);
 
     if (event.type === 'message') {
-        let userid = event.source.userId,
-            msgtype = event.message.type,
+
+        let msgtype = event.message.type,
             msgtext = event.message.text,
             resptext = '';
 
         if (msgtext.startsWith(prefix)) {
+
             // check auth for cmd mode
             switch (msgtext) {
                 case '--echo':
                     resptext = msgtext;
+                    break;
+                case '--startGame':
+                    _game.startGame(50);
                     break;
                 default:
                     resptext = 'Unkown command.';

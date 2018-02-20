@@ -2,6 +2,8 @@ import linebot from 'linebot';
 import express from 'express';
 const eventHandler = require('./lib/event.js');
 
+import debugHandler from './lib/debug.js';
+
 // create LINE SDK config from env variables
 const bot = linebot({
     channelId: process.env.CHANNEL_ID,
@@ -13,6 +15,11 @@ const bot = linebot({
 // create Express app
 const app = express();
 const linebotParser = bot.parser();
+
+app.get('/', function(res, rep) {
+    rep.append('Hello');
+    debugHandler(rep);
+});
 
 app.post('/callback', linebotParser);
 
