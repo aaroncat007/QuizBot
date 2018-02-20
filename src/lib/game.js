@@ -12,7 +12,7 @@ class Game {
 
     startGame(range) {
         let uuid = uuidV4();
-        this._firebase.write('game/uuid', {
+        this._firebase.write('game/' + uuid, {
             uuid: uuid,
             author: this.userId,
             range: range,
