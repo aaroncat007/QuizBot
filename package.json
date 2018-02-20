@@ -1,17 +1,18 @@
 {
-    "name": "quizbot",
-    "version": "1.0.0",
-    "description": "just a quiz bot",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Aaron.Fan",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.16.2",
-        "firebase": "^4.10.0",
-        "linebot": "^1.4.1"
-    }
+  "name": "quizbot",
+  "version": "1.0.0",
+  "description": "just a quiz bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron.Fan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "firebase": "^4.10.0",
+    "linebot": "^1.4.1",
+    "moment": "^2.20.1"
+  }
 }

@@ -1,6 +1,7 @@
 const linebot = require('linebot');
 const express = require('express');
 const eventHandler = require('./lib/event.js');
+
 // create LINE SDK config from env variables
 const bot = linebot({
     channelId: process.env.CHANNEL_ID,
