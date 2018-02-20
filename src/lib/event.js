@@ -1,5 +1,5 @@
 'use strict';
-import MyFireBase from './firebase.js';
+import { MyFireBase } from './firebase.js';
 const prefix = '--';
 
 let eventHandler = event => {
