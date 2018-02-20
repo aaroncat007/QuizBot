@@ -1,18 +1,17 @@
 'use strict';
-import MyFireBase from './firebase.js';
+
 import uuidV4 from 'uuid/v4';
 import monent from 'moment';
 
-const _firebase = new MyFireBase();
-
 
 class Game {
-    constructor(userId) {
+    constructor(firebase, userId) {
         this.userId = userId;
+        this._firebase = firebase;
     }
 
     startGame(range) {
-        _firebase.write('game', {
+        this._firebase.write('game', {
             uuid: uuidV4(),
             author: this.userId,
             range: range,

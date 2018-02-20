@@ -11,7 +11,7 @@ let eventHandler = event => {
     }
 
     let userid = event.source.userId;
-    const _game = new Game(userid);
+    const _game = new Game(_firebase, userid);
 
     if (event.type === 'message') {
 
