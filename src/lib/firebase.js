@@ -21,7 +21,7 @@ class MyFireBase {
     log(userId, msg) {
         this.db.ref('logs/' + userId).set({
             message: JSON.stringify(msg),
-            createdTime: monent(new Date(), "YYYY-MM-DD HH:mm:ss")
+            createdTime: monent().format("YYYY-MM-DD HH:mm:ss")
         });
     }
 }
