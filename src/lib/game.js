@@ -11,8 +11,9 @@ class Game {
     }
 
     startGame(range) {
-        this._firebase.write('game', {
-            uuid: uuidV4(),
+        let uuid = uuidV4();
+        this._firebase.write('game/uuid', {
+            uuid: uuid,
             author: this.userId,
             range: range,
             createdTime: monent().format("YYYY-MM-DD HH:mm:ss")
