@@ -1,4 +1,4 @@
-const linebot = require('linebot');
+import linebot from 'linebot';
 import express from 'express';
 const eventHandler = require('./lib/event.js');
 

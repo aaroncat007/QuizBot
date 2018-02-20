@@ -1,6 +1,7 @@
 'use strict';
-import { MyFireBase } from './firebase.js';
+import MyFireBase from './firebase.js';
 const prefix = '--';
+const _firebase = new MyFireBase();
 
 let eventHandler = event => {
     if (!event) {
@@ -37,7 +38,7 @@ let eventHandler = event => {
             console.log(`${userid}  ${error}`);
         });
 
-        MyFireBase.log(userid, event);
+        _firebase.log(userid, event);
     }
 
 };
