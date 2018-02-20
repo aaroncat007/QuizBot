@@ -26,4 +26,4 @@ class MyFireBase {
     }
 }
 
-module.exports = MyFireBase;
+export default MyFireBase;
