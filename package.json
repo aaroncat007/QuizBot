@@ -1,26 +1,26 @@
 {
-  "name": "quizbot",
-  "version": "1.0.0",
-  "description": "just a quiz bot",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm run build && node ./build/index.js",
-    "clean": "echo 'ht'",
-    "build-babel": "babel -d ./build ./src -s",
-    "build": "npm run clean && npm run build-babel",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Aaron.Fan",
-  "license": "ISC",
-  "dependencies": {
-    "babel-preset-env": "^1.6.1",
-    "express": "^4.16.2",
-    "firebase": "^4.10.0",
-    "linebot": "^1.4.1",
-    "moment": "^2.20.1",
-    "uuid": "^3.2.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0"
-  }
+    "name": "quizbot",
+    "version": "1.0.0",
+    "description": "just a quiz bot",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build && node ./build/index.js",
+        "clean": "rm -rf build && mkdir build",
+        "build-babel": "babel -d ./build ./src -s",
+        "build": "npm run clean && npm run build-babel",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Aaron.Fan",
+    "license": "ISC",
+    "dependencies": {
+        "babel-preset-env": "^1.6.1",
+        "express": "^4.16.2",
+        "firebase": "^4.10.0",
+        "linebot": "^1.4.1",
+        "moment": "^2.20.1",
+        "uuid": "^3.2.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0"
+    }
 }

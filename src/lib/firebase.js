@@ -6,13 +6,13 @@ class MyFireBase {
 
     constructor() {
         // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBOh15OG9QwnI0N8HSbr4wmX6dg6ShCqRM",
-            authDomain: "quizbot-b2407.firebaseapp.com",
-            databaseURL: "https://quizbot-b2407.firebaseio.com",
-            projectId: "quizbot-b2407",
-            storageBucket: "quizbot-b2407.appspot.com",
-            messagingSenderId: "342500485053"
+        let config = {
+            apiKey: process.env.firebase_apikey,
+            authDomain: process.env.firebase_authDomain,
+            databaseURL: process.env.firebase_databaseURL,
+            projectId: process.env.firebase_projectId,
+            storageBucket: process.env.firebase_storageBucket,
+            messagingSenderId: process.env.firebase_messagingSenderId
         };
         firebase.initializeApp(config);
         this.db = firebase.database();
